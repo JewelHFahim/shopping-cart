@@ -9,6 +9,7 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+
     addToCart: (state, actions) => {
       const existing = state.products.find(
         (product) => product._id === actions.payload._id
@@ -45,6 +46,10 @@ export const cartSlice = createSlice({
       state.total =
         Number(state.total) -
         Number(actions.payload.price) * Number(actions.payload.quantity);
+    },
+
+    updateNavState: (state, actions) => {
+      state.navState = actions.payload;
     },
   },
 });

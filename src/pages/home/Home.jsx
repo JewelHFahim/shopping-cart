@@ -3,17 +3,23 @@ import Category from "../../components/category/Category";
 import Footer from "../../components/footer/Footer";
 import MainSlide from "../../components/slider/MainSlide";
 import Shop from "../shop/Shop";
+import OraganicShop from "../oraganic/OraganicShop";
 
 const Home = () => {
-  
-  const [ category, setCategory ] = useState("eyeglass");
+  const [category, setCategory] = useState("eyeglass");
 
   return (
-    <div className="font-inter">
+    <div>
       <MainSlide />
-      <Category setCategory={setCategory}/>
-      <Shop category={category}/>
-      <Footer/>
+      <OraganicShop />
+
+      
+
+      {/* <Shop category={category}/> */}
+
+     
+
+      <Footer />
     </div>
   );
 };

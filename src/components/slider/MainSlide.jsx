@@ -2,27 +2,27 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-
+import img1 from "../../assets/slider 1.jpg";
+import img2 from "../../assets/slider 2.jpg";
+import img3 from "../../assets/slider 3.jpeg";
 
 export default function MainSlide() {
   const datas = [
     {
-      img: "https://images.newindianexpress.com/expressdeals/assets/images/content/2023/02/07/original/Best-Sunglasses-Brands-for-Men-and-Women.jpg",
+      img: img1,
     },
     {
-      img: "https://static1.lenskart.com/media/desktop/img/oct23/web/artisinal.jpg",
+      img: img2,
     },
     {
-      img: "https://static1.lenskart.com/media/desktop/img/aug23/air/web.gif",
+      img: img3,
     },
   ];
 
   return (
     <>
       <Swiper
-        pagination={{
-          dynamicBullets: true,
-        }}
+        pagination={false}
         autoplay={{
           delay: 3500,
           disableOnInteraction: false,
@@ -33,11 +33,11 @@ export default function MainSlide() {
         <div>
           {datas.map((data, i) => (
             <SwiperSlide key={i}>
-              <div className="w-full h-[70vh]">
+              <div className="w-full h-[200px] lg:h-[45vh]">
                 <img
                   src={data.img}
                   alt=""
-                  className="w-full h-full object-fill"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </SwiperSlide>

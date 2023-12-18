@@ -9,17 +9,17 @@ import {
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-    
   const { products, total } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   return (
     <>
-      <div className="bg-gray-100 ">
-        <div className="container mx-auto">
-          <div className="lg:flex shadow-md h-screen">
+      <div className="bg-gray-100 full">
+        <div className="container mx-auto h-full">
+          <div className="flex flex-col justify-between h-full lg:flex-row">
 
-            <div className=" lg:w-3/4 bg-white px-10 py-10">
+            <div className="lg:w-3/4 bg-white px-10 lg:py-6">
+
               <div className="flex justify-between border-b pb-2 lg:pb-8 mb-5 lg:mb-0">
                 <h1 className="font-semibold text-2xl text-gray-600">
                   Shopping Cart
@@ -46,8 +46,9 @@ const Cart = () => {
                     {products?.map((product, i) => (
                       <div
                         key={i}
-                        className="flex justify-between items-center hover:shadow-md transform duration-200 -mx-8 p-2 lg:px-6 lg:py-5 text-gray-600 border"
+                        className="flex justify-between items-center hover:shadow-md transform duration-200 -mx-8 p- lg:px-6  text-gray-600 border"
                       >
+                        {/* Product Details */}
                         <div className="flex items-center w-2/5">
                           <div className="w-10 h-10 lg:w-20 lg:h-20">
                             <img
@@ -75,31 +76,28 @@ const Cart = () => {
                           </div>
                         </div>
 
+                        {/* Quantity */}
                         <div className="flex justify-center w-1/5">
-                          <button
-                            onClick={() => dispatch(removeSingle(product))}
-                          >
+                          <button onClick={() => dispatch(removeSingle(product))}>
                             <AiOutlineMinus />
                           </button>
 
-                          <input
-                            className="mx-2 border text-center w-5 lg:w-8 text-gray-600 bg-gray-100"
-                            type="text"
-                            defaultValue={product.quantity}
-                          />
+                          <div className="mx-2 border text-center w-5 lg:w-8 text-gray-600 bg-gray-100">
+                            {product.quantity}
+                          </div>
 
                           <button onClick={() => dispatch(addToCart(product))}>
                             <AiOutlinePlus />
                           </button>
                         </div>
 
-                        <span className="hidden lg:block text-center w-1/5 font-semibold text-sm">
+                        <div className="hidden lg:block text-center w-1/5 font-semibold text-sm">
                           {product.price} Tk
-                        </span>
+                        </div>
 
-                        <span className="text-center w-1/5 font-semibold text-sm">
+                        <div className="text-center w-1/5 font-semibold text-sm">
                           {product.quantity * product.price} tk
-                        </span>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -115,7 +113,7 @@ const Cart = () => {
               </Link>
             </div>
 
-            <div className=" lg:w-1/4 px-8 py-10  bg-slate-100 shadow text-gray-600">
+            <div className=" lg:w-1/4 px-8 py-6  bg-green-50 shadow text-gray-600">
               <h1 className="font-semibold text-2xl border-b pb-8 ">
                 Order Summary
               </h1>
@@ -150,20 +148,23 @@ const Cart = () => {
                   <span className="uppercase">Total cost</span>
 
                   <span>
-                     {
-                      (Number(total) +  (Number(total) * .002) + (Number(total) * .001)).toFixed(2)
-                     }
-                     
-                      Tk</span>
+                    {(
+                      Number(total) +
+                      Number(total) * 0.002 +
+                      Number(total) * 0.001
+                    ).toFixed(2)}
+                    Tk
+                  </span>
                 </div>
 
                 <Link to="">
-                  <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
+                  <button className="bg-green-500 font-semibold hover:bg-green-600 py-3 text-sm text-white uppercase w-full">
                     Checkout
                   </button>
                 </Link>
               </div>
             </div>
+
           </div>
         </div>
       </div>

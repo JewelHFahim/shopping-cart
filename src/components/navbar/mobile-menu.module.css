@@ -1,0 +1,36 @@
+.container {
+    height: 100vh;
+    padding: 10px 20px;
+    background-color: rgb(27, 28, 29);
+  }
+  
+  .container h1 {
+    font-size: 25px;
+    font-weight: 600;
+    background: linear-gradient(to left, #194C33 50%, #bbb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .container span {
+    font-weight: 600;
+  }
+  
+  .container ul {
+    margin-top: 50px;
+    padding-right: 30px;
+  }
+  
+  
+  .container ul li{
+      padding: 12px 0px;
+      border-bottom: 1px solid rgb(69, 68, 68);
+      color: white;
+      font-size: 14px;
+  }
+  
+  .container ul li:hover{
+      background: rgb(58, 202, 58);
+      color: white;
+      padding: 10px;
+  }

@@ -4,23 +4,20 @@ import { useGetProductsQuery } from "../../redux/features/api/apiSlice";
 import { Link } from "react-router-dom";
 
 const Shop = ({ category }) => {
-
   const { data: products } = useGetProductsQuery();
 
   const filteredProducts = products?.data?.filter((product) => {
     return product.category === category;
   });
 
-  console.log(filteredProducts);
-
   return (
-    <div className="px-[120px] py-8">
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-4">
+    <div className="px-6 lg:px-[120px]">
+      <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-4">
         {filteredProducts?.map((product, i) => (
           <Link
             to={`/product/${product?._id}`}
             key={i}
-            className="w-[300px] h-[350px] relative flex flex-col items-center justify-center shadow-sm hover:shadow-xl transform duration-200"
+            className="lg:w-[300px] lg:h-[350px] relative flex flex-col items-center justify-center shadow-sm hover:shadow-xl transform duration-200"
           >
             <img
               src={product?.image}
