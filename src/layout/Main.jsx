@@ -19,7 +19,7 @@ const Main = () => {
       <MobileNavbar isOpen={isOpen} toggleDrawer={toggleDrawer} />
       <Outlet />
 
-      {location.pathname !== "/cart" && (
+      {location.pathname !==  ("/cart" && "/order") && (
         <div className="fixed top-[36vh] z-[999] lg:top-[57vh] right-0">
           <CartBtn />
         </div>

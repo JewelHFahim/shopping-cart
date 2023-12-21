@@ -9,6 +9,7 @@ import OraganicShop from "../pages/oraganic/OraganicShop";
 import DashboardLayout from "../layout/DashboardLayout";
 import Dashboard from "../dashboard/dashboard/Dashboard";
 import AddProduct from "../dashboard/add-product/AddProduct";
+import Order from "../pages/order/Order";
 
 const router = createBrowserRouter([
 
@@ -21,10 +22,17 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+
       {
         path: "/cart",
         element: <Cart />,
       },
+
+      {
+        path: "/order",
+        element: <Order />,
+      },
+
       {
         path: "/product/:id",
         element: <ProductDetail />,
@@ -43,7 +51,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // =============>> Client Routes <<============
+  // =============>> Admin Routes <<============
 {
   path: "/dashboard",
     element: <DashboardLayout />,
@@ -55,7 +63,8 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/add-product",
         element: <AddProduct/>
-      }
+      },
+
     ]
 }
 ]);

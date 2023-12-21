@@ -157,7 +157,7 @@ const Cart = () => {
                   </span>
                 </div>
 
-                <Link to="">
+                <Link to="/order">
                   <button className="bg-green-500 font-semibold hover:bg-green-600 py-3 text-sm text-white uppercase w-full">
                     Checkout
                   </button>
