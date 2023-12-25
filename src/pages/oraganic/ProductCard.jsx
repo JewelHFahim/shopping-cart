@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
+
   return (
     <div>
       <div className="lg:w-[300px] w-full lg:h-[350px] min-h-full p-2 lg:p-0 flex flex-col items-center justify-center shadow-sm hover:shadow-xl transform duration-200 border rounded-md overflow-hidden">

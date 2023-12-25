@@ -10,9 +10,11 @@ import DashboardLayout from "../layout/DashboardLayout";
 import Dashboard from "../dashboard/dashboard/Dashboard";
 import AddProduct from "../dashboard/add-product/AddProduct";
 import Order from "../pages/order/Order";
+import About from "../pages/about/About";
+import OrdersDB from "../dashboard/dashboard/OrdersDB";
+import Invoice from "../dashboard/dashboard/Invoice";
 
 const router = createBrowserRouter([
-
   // =============>> Client Routes <<============
   {
     path: "/",
@@ -22,20 +24,21 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-
       {
         path: "/cart",
         element: <Cart />,
       },
-
       {
         path: "/order",
         element: <Order />,
       },
-
       {
         path: "/product/:id",
         element: <ProductDetail />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/contact",
@@ -51,22 +54,30 @@ const router = createBrowserRouter([
       },
     ],
   },
+
   // =============>> Admin Routes <<============
-{
-  path: "/dashboard",
+  {
+    path: "/dashboard",
     element: <DashboardLayout />,
     children: [
       {
         path: "/dashboard",
-        element: <Dashboard/>
+        element: <Dashboard />,
+      },
+      {
+        path: "/dashboard/orders",
+        element: <OrdersDB />,
+      },
+      {
+        path: "/dashboard/invoice/:id",
+        element: <Invoice />,
       },
       {
         path: "/dashboard/add-product",
-        element: <AddProduct/>
+        element: <AddProduct />,
       },
-
-    ]
-}
+    ],
+  },
 ]);
 
 export default router;

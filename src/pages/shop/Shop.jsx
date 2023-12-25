@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
-
-import { useGetProductsQuery } from "../../redux/features/api/apiSlice";
 import { Link } from "react-router-dom";
+import { useGetProductsQuery } from "../../redux/features/products/productApi";
 
 const Shop = ({ category }) => {
   const { data: products } = useGetProductsQuery();

@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
-import { useGetSingleProductQuery } from "../../redux/features/api/apiSlice";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 import { useState } from "react";
 import Buttons from "../../utils/Buttons";
+import { useGetSingleProductQuery } from "../../redux/features/products/productApi";
 
 const ProductDetail = () => {
   const { id } = useParams();

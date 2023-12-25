@@ -127,7 +127,7 @@ const Cart = () => {
                 </span>
               </div>
 
-              <div className="flex justify-between mt-10 mb-5">
+              {/* <div className="flex justify-between mt-10 mb-5">
                 <span className="font-semibold text-sm uppercase">
                   Shipping:
                 </span>
@@ -141,7 +141,7 @@ const Cart = () => {
                 <span className="font-semibold text-sm">
                   {(total * 0.002).toFixed(2)} Tk
                 </span>
-              </div>
+              </div> */}
 
               <div className="border-t mt-8">
                 <div className="flex font-semibold justify-between py-6 text-sm ">
@@ -149,9 +149,7 @@ const Cart = () => {
 
                   <span>
                     {(
-                      Number(total) +
-                      Number(total) * 0.002 +
-                      Number(total) * 0.001
+                      Number(total)
                     ).toFixed(2)}
                     Tk
                   </span>

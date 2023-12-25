@@ -1,0 +1,25 @@
+.invoiceBgColor {
+  background: linear-gradient(
+90deg,
+
+    rgb(34, 197, 94) 25%,
+
+    #fff 25%,
+    #fff 27%,
+
+    #86efac  27%,
+    #86efac  29%,
+
+    #fff 29%,
+    #fff 31%,
+
+    
+    #86efac  31%,
+    #86efac  33%,
+
+    #fff 33%,
+    #fff 35%,
+
+    #86efac 35%
+  );
+}

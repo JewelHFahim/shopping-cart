@@ -51,8 +51,8 @@ const Sidebar = () => {
         },
 
         {
-            href: '/dashboard/db-movies',
-            name: 'Dbmovies',
+            href: '/dashboard/orders',
+            name: 'Ordes',
             icon: <BsCameraReels />
         },
     ]

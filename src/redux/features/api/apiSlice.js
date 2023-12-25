@@ -1,45 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const apiSlice = createApi({
-  reducerPath: "api",
+const apiSlice = createApi({
+  reducerPath: "apiSlice",
   baseQuery: fetchBaseQuery({ baseUrl: "https://shopping-cart-server-ebon.vercel.app" }),
   // baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000" }),
-  tagTypes: ["shoppin-cart"],
-
-  endpoints: (builder) => ({
-
-    getProducts: builder.query({
-      query: () => `/products`,
-      providesTags: ["shoppin-cart"],
-    }),
-
-    getSingleProduct: builder.query({
-      query: (id) => `/product/${id}`,
-      providesTags: ["shoppin-cart"],
-    }),
-
-    postProduct: builder.mutation({
-      query: (data) => ({
-        url: `/product`,
-        method: "POST",
-        body: data,
-      }),
-      invalidatesTags: ["shoppin-cart"],
-    }),
-
-    deleteProduct: builder.mutation({
-      query(id) {
-        return {
-          url: `/product/${id}`,
-          method: "DELETE",
-        };
-      },
-      invalidatesTags: ["shoppin-cart"],
-    })
-  }),
+  tagTypes: ["nature-hub"],
+  endpoints: () => ({}),
 });
 
-export const {
-    useGetProductsQuery,
-    useGetSingleProductQuery
-} = apiSlice;
+export default apiSlice;

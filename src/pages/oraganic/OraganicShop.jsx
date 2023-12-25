@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
 import CategoryOrganic from "../../components/organic-category/CategoryOrganic";
-import { useGetProductsQuery } from "../../redux/features/api/apiSlice";
 import ProductCard from "./ProductCard";
+import { useGetProductsQuery } from "../../redux/features/products/productApi";
 
 const OraganicShop = () => {
   const { data: products } = useGetProductsQuery();
