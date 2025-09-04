@@ -7,7 +7,11 @@ const Home = () => {
   return (
     <div>
       <MainSlide />
+
+      
       <OraganicShop />
+
+      
       <Footer />
     </div>
   );

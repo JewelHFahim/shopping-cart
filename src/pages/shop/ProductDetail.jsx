@@ -1,16 +1,19 @@
-import { useParams } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 import { useState } from "react";
 import Buttons from "../../utils/Buttons";
-import { useGetSingleProductQuery } from "../../redux/features/products/productApi";
 
 const ProductDetail = () => {
-  const { id } = useParams();
-  const { data: product } = useGetSingleProductQuery(id);
-  console.log(product);
   const dispatch = useDispatch();
+
+   const product ={
+      _id: 1,
+      title: "Purpose Seasoning",
+      price: 599,
+      image: "https://dummyimage.com/520x520/cccccc/000000&text=Olive+Oil",
+      weight: "100gm",
+    }
 
 
   const [active, setActive] = useState("description");

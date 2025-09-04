@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
@@ -31,7 +32,7 @@ const Navbar = ({ toggleDrawer, isOpen }) => {
     <nav className="px-6 lg:px-[150px] py-4 flex justify-between items-center shadow-md bg-green-600">
       <div>
         <a href="/" className="text-[22px] font-semibold text-white">
-          Nature Hub
+          Ayaaz__
         </a>
       </div>
 
